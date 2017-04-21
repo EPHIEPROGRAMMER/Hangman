@@ -2,7 +2,12 @@
 
 This readme contains details of this game is and how to run it on your local machine.
 
-##Creators
+## Whats It About?
+
+This is a digital version of the famous game, Hangman. It is a game whereby, a random word is generated and the user is supposed to guess the letters in the word until they get it.
+
+## Creators
+
 1. Bry Onyoni.
 
 ## Prerequisites
