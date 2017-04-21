@@ -9,4 +9,10 @@ public class HangmanTest{
     assertEquals(true,hangman.HangmanLetterToBeChecked("a"));
   }
 
+  @Test
+  public void hangman_isLetterContainedinWord_false(){
+    Hangman hangman = new Hangman();
+    assertEquals(false,hangman.HangmanLetterToBeChecked("z"));
+  }
+
 }
