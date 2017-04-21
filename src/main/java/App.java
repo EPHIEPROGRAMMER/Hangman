@@ -19,14 +19,26 @@ public class App {
 
         Hangman hangman = new Hangman();
 
-        Integer numberOfGuessesLimit = 5;
+        Integer numberOfGuessesLimit = 4;
         for( int i = 0 ; i <= numberOfGuessesLimit ; i++ ){
           System.out.println("Enter a letter:");
-          System.out.println("_ _ _");
+          String wordThatPlayerHasGotten = "_ _ _";
+
+          System.out.println(wordThatPlayerHasGotten);
           String letterTypedIn = myConsole.readLine();
           boolean isTheletterInTheWord = hangman.HangmanLetterToBeChecked(letterTypedIn);
           if(isTheletterInTheWord == true){
           System.out.println("the letter is in the word");
+
+           Integer indexOfLetterPutIn = hangman.IndexOfLetter(letterTypedIn);
+           char letterToBeReplaced = wordThatPlayerHasGotten.charAt(indexOfLetterPutIn);
+           char letterTypedIn_charForm = letterTypedIn.charAt(0);
+           String newWordThatPlayerHasGotten = wordThatPlayerHasGotten.replace(letterToBeReplaced,letterTypedIn_charForm );
+
+          // Integer indexOfLetterPutIn = hangman.IndexOfLetter(letterTypedIn);
+          // StringBuilder newWordThatPlayerHasGotten = new StringBuilder("wordThatPlayerHasGotten");
+          //  newWordThatPlayerHasGotten.setCharAt(indexOfLetterPutIn,letterTypedIn);
+
           }else{
             System.out.println("the letter is not in the word");
           }

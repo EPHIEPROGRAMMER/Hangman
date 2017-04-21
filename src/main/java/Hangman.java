@@ -13,10 +13,17 @@ public class Hangman{
     }
   }
 
-  public Object IndexOfLetter(String character){
+  public Integer IndexOfLetter(String character){
     String WordToBeChecked =  listOfWords[stringNumberInArray];
     Integer indexOfTheWordToBeChecked = WordToBeChecked.indexOf(character);
     return indexOfTheWordToBeChecked;
+  }
+
+  public boolean checkIfTheLetterMatches(String word){
+    String WordToBeChecked =  listOfWords[stringNumberInArray];
+    Boolean doTheWordsMatch = word.equals(WordToBeChecked);
+    return doTheWordsMatch;
+    // return false;
   }
 
 }
