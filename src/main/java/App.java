@@ -3,7 +3,7 @@ import java.io.Console;
 public class App {
   public static void main(String[] args){
     Console myConsole = System.console();
-   System.out.println("Welcome to Hangman.Type Continue to continue...");
+   System.out.println("Welcome to Hangman.Press enter to continue...");
    String stringStartTheGame = myConsole.readLine();
 
    boolean programRunning=true;
@@ -16,12 +16,21 @@ public class App {
         programRunning=false;
 
       }else if(stringNewGameOrExit.equals("Start")){
-        System.out.println("Enter a letter:");
-        System.out.println("_ _ _");
-        String letterTypedIn = myConsole.readLine();
+
         Hangman hangman = new Hangman();
-        boolean isTheletterInTheWord = hangman.HangmanLetterToBeChecked(letterTypedIn);
-        System.out.println("that is "+ isTheletterInTheWord);
+
+        Integer numberOfGuessesLimit = 5;
+        for( int i = 0 ; i <= numberOfGuessesLimit ; i++ ){
+          System.out.println("Enter a letter:");
+          System.out.println("_ _ _");
+          String letterTypedIn = myConsole.readLine();
+          boolean isTheletterInTheWord = hangman.HangmanLetterToBeChecked(letterTypedIn);
+          if(isTheletterInTheWord == true){
+          System.out.println("the letter is in the word");
+          }else{
+            System.out.println("the letter is not in the word");
+          }
+        }
 
       }else{
         System.out.println("Boiiiiiiiiiiiiiiiiii, we don't recognize your input");

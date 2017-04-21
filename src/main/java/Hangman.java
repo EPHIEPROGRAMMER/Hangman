@@ -13,4 +13,10 @@ public class Hangman{
     }
   }
 
+  public Object IndexOfLetter(String character){
+    String WordToBeChecked =  listOfWords[stringNumberInArray];
+    Integer indexOfTheWordToBeChecked = WordToBeChecked.indexOf(character);
+    return indexOfTheWordToBeChecked;
+  }
+
 }

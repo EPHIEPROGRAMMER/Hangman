@@ -15,4 +15,10 @@ public class HangmanTest{
     assertEquals(false,hangman.HangmanLetterToBeChecked("z"));
   }
 
+  @Test
+  public void hangman_IndexOfLetterInResidualString_p(){
+    Hangman hangman = new Hangman();
+    assertEquals(0,hangman.IndexOfLetter("p"));
+  }
+
 }
