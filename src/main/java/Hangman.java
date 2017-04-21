@@ -1,6 +1,6 @@
 public class Hangman{
 
- String[] listOfWords= {"pancakes","potatoes"} ;
+ String[] listOfWords= {"pan","brown","crust","demon","list","cake","pot","millenium" } ;
 
  Integer stringNumberInArray= 0;
 
