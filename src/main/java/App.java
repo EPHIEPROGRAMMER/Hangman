@@ -2,7 +2,7 @@ import java.io.Console;
 
 public class App {
   public static void main(String[] args){
-    Console myConsole = System.console();
+   Console myConsole = System.console();
    System.out.println("Welcome to Hangman.Press enter to continue...");
    String stringStartTheGame = myConsole.readLine();
 
@@ -10,10 +10,11 @@ public class App {
 
     while(programRunning){
 
-    System.out.println("Type start for A new game or exit to exit");
-    String stringNewGameOrExit = myConsole.readLine();
+      System.out.println("Type start for A new game or exit to exit");
+      String stringNewGameOrExit = myConsole.readLine();
 
       if(stringNewGameOrExit.equals("exit")){
+        System.out.println("Thanks for playing!");
         programRunning=false;
 
       }else if(stringNewGameOrExit.equals("start")){
@@ -25,13 +26,14 @@ public class App {
         Integer numberOfGuessesLimit = 3;
 
         for( int i = 0 ; i <= numberOfGuessesLimit ; i++ ){
+          System.out.println(wordThatPlayerHasGotten);
           System.out.println("Enter a letter:");
 
           String letterTypedIn = myConsole.readLine();
           boolean isTheletterInTheWord = hangman.HangmanLetterToBeChecked(letterTypedIn);
 
           if(isTheletterInTheWord == true){
-          System.out.println("the letter is in the word");
+           System.out.println("the letter is in the word");
 
            Integer indexOfLetterPutIn = hangman.IndexOfLetter(letterTypedIn);
            char letterToBeReplaced = wordThatPlayerHasGotten.charAt(indexOfLetterPutIn);
@@ -46,15 +48,17 @@ public class App {
              System.out.println("Well done, youve gotten it.ready for your next word?");
              Integer newStringNumberInArray = stringNumberInArray += 1;
              stringNumberInArray = newStringNumberInArray;
+             wordThatPlayerHasGotten = "*+-";
              i = 0;
 
-           }else if(ifPlayerHasGottenTheWord != true && i == numberOfGuessesLimit ){
-             System.out.println("Away you weakling.YOU LOSE!!!");
-            }
-          }else{
+           }else{
             System.out.println("the letter is not in the word");
-          }
+           }
+
+         }
         }
+        System.out.println("Away you weakling. YOU HAVE FAILED!!");
+        programRunning=false;
 
       }else{
         System.out.println("Boiiiiiiiiiiiiiiiiii, we don't recognize your input");
