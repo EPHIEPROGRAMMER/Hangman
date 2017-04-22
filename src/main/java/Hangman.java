@@ -1,6 +1,6 @@
 public class Hangman{
 
- String[] listOfWords= {"pan","brown","crust","demon","list","cake","pot","millenium" } ;
+ String[] listOfWords= {"pan","can","bin","cob","sly","try","fry","bry" } ;
 
  Integer stringNumberInArray= 0;
 
@@ -23,7 +23,6 @@ public class Hangman{
     String WordToBeChecked =  listOfWords[stringNumberInArray];
     Boolean doTheWordsMatch = word.equals(WordToBeChecked);
     return doTheWordsMatch;
-    // return false;
   }
 
 }

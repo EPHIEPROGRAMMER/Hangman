@@ -9,20 +9,20 @@ public class App {
    boolean programRunning=true;
 
     while(programRunning){
-    System.out.println("Type Start for A new game or Exit to exit");
+    System.out.println("Type Start for A new game or exit to exit");
     String stringNewGameOrExit = myConsole.readLine();
 
-      if(stringNewGameOrExit.equals("Exit")){
+      if(stringNewGameOrExit.equals("exit")){
         programRunning=false;
 
       }else if(stringNewGameOrExit.equals("Start")){
 
         Hangman hangman = new Hangman();
 
+        String wordThatPlayerHasGotten = "*+-";
         Integer numberOfGuessesLimit = 3;
         for( int i = 0 ; i <= numberOfGuessesLimit ; i++ ){
           System.out.println("Enter a letter:");
-          String wordThatPlayerHasGotten = "*+-";
 
           String letterTypedIn = myConsole.readLine();
           boolean isTheletterInTheWord = hangman.HangmanLetterToBeChecked(letterTypedIn);
@@ -34,7 +34,8 @@ public class App {
            char letterTypedIn_charForm = letterTypedIn.charAt(0);
            String newWordThatPlayerHasGotten = wordThatPlayerHasGotten.replace(letterToBeReplaced,letterTypedIn_charForm );
            System.out.println(newWordThatPlayerHasGotten);
-           newWordThatPlayerHasGotten = wordThatPlayerHasGotten;
+          //  newWordThatPlayerHasGotten = wordThatPlayerHasGotten;
+           wordThatPlayerHasGotten = newWordThatPlayerHasGotten;
 
           }else{
             System.out.println("the letter is not in the word");
