@@ -9,23 +9,27 @@ public class App {
    boolean programRunning=true;
 
     while(programRunning){
-    System.out.println("Type Start for A new game or exit to exit");
+
+    System.out.println("Type start for A new game or exit to exit");
     String stringNewGameOrExit = myConsole.readLine();
 
       if(stringNewGameOrExit.equals("exit")){
         programRunning=false;
 
-      }else if(stringNewGameOrExit.equals("Start")){
+      }else if(stringNewGameOrExit.equals("start")){
 
         Hangman hangman = new Hangman();
 
         String wordThatPlayerHasGotten = "*+-";
+        Integer stringNumberInArray = hangman.stringNumberInArray;
         Integer numberOfGuessesLimit = 3;
+
         for( int i = 0 ; i <= numberOfGuessesLimit ; i++ ){
           System.out.println("Enter a letter:");
 
           String letterTypedIn = myConsole.readLine();
           boolean isTheletterInTheWord = hangman.HangmanLetterToBeChecked(letterTypedIn);
+
           if(isTheletterInTheWord == true){
           System.out.println("the letter is in the word");
 
@@ -37,10 +41,16 @@ public class App {
            wordThatPlayerHasGotten = newWordThatPlayerHasGotten;
 
            Boolean ifPlayerHasGottenTheWord = hangman.ifWordBeingPlayedIsComplete(newWordThatPlayerHasGotten);
-           if(ifPlayerHasGottenTheWord){
-               System.out.println("Well done, youve gotten it.ready for your next word?");
-           }
 
+           if(ifPlayerHasGottenTheWord){
+             System.out.println("Well done, youve gotten it.ready for your next word?");
+             Integer newStringNumberInArray = stringNumberInArray += 1;
+             stringNumberInArray = newStringNumberInArray;
+             i = 0;
+
+           }else if(ifPlayerHasGottenTheWord != true && i == numberOfGuessesLimit ){
+             System.out.println("Away you weakling.YOU LOSE!!!");
+            }
           }else{
             System.out.println("the letter is not in the word");
           }

@@ -1,6 +1,6 @@
 public class Hangman{
 
- String[] listOfWords= {"pan","can","bin","cob","sly","try","fry","bry" } ;
+ public String[] listOfWords= {"pan","can","bin","cob","sly","try","fry","bry" } ;
 
  Integer stringNumberInArray= 0;
 
@@ -28,10 +28,16 @@ public class Hangman{
   public boolean ifWordBeingPlayedIsComplete(String word){
     String wordBeingPlayed = listOfWords[stringNumberInArray];
     if(wordBeingPlayed.equals(word)){
+      stringNumberInArray+=1;
       return true;
     }else{
       return false;
     }
+  }
+
+  public Integer changeWordThatIsBeingPlayed(){
+    Integer newStringNumberInArray = stringNumberInArray += 1;
+     return newStringNumberInArray;
   }
 
 }

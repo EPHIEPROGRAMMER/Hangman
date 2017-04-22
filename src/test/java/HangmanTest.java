@@ -34,4 +34,12 @@ public class HangmanTest{
     assertEquals(true,hangman.ifWordBeingPlayedIsComplete("pan"));
   }
 
+  @Test
+  public void hangman_changeWordThatIsBeingPlayed_1(){
+    Hangman hangman = new Hangman();
+    Integer outPutNumber = 1;
+    assertEquals(outPutNumber,hangman.changeWordThatIsBeingPlayed());
+
+  }
+
 }
