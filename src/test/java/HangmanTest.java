@@ -16,15 +16,22 @@ public class HangmanTest{
   }
 
   @Test
-  public void hangman_IndexOfLetterInResidualString_p(){
+  public void hangman_IndexOfLetterInResidualString_1(){
     Hangman hangman = new Hangman();
-    assertEquals(0,hangman.IndexOfLetter("p"));
+    Integer outPutNumber = 1;
+    assertEquals(outPutNumber,hangman.IndexOfLetter("a"));
   }
 
   @Test
   public void hangman_checkIfTheLetterPutInMatchesItsCorrespondingstring_true(){
     Hangman hangman = new Hangman();
     assertEquals(true,hangman.checkIfTheLetterMatches("pan"));
+  }
+
+  @Test
+  public void hangman_ifWordBeingPlayedIsComplete_true(){
+    Hangman hangman = new Hangman();
+    assertEquals(true,hangman.ifWordBeingPlayedIsComplete("pan"));
   }
 
 }

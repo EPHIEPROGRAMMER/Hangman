@@ -25,4 +25,13 @@ public class Hangman{
     return doTheWordsMatch;
   }
 
+  public boolean ifWordBeingPlayedIsComplete(String word){
+    String wordBeingPlayed = listOfWords[stringNumberInArray];
+    if(wordBeingPlayed.equals(word)){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
 }

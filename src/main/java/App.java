@@ -34,8 +34,12 @@ public class App {
            char letterTypedIn_charForm = letterTypedIn.charAt(0);
            String newWordThatPlayerHasGotten = wordThatPlayerHasGotten.replace(letterToBeReplaced,letterTypedIn_charForm );
            System.out.println(newWordThatPlayerHasGotten);
-          //  newWordThatPlayerHasGotten = wordThatPlayerHasGotten;
            wordThatPlayerHasGotten = newWordThatPlayerHasGotten;
+
+           Boolean ifPlayerHasGottenTheWord = hangman.ifWordBeingPlayedIsComplete(newWordThatPlayerHasGotten);
+           if(ifPlayerHasGottenTheWord){
+               System.out.println("Well done, youve gotten it.ready for your next word?");
+           }
 
           }else{
             System.out.println("the letter is not in the word");
